@@ -187,6 +187,6 @@ Mobile (responsive design)
 This project is intended for educational and demonstration purposes.
 Feel free to use and modify it.
 
-### **👨‍💻 Developer
+###👨‍💻 Developer
 Kristi Spahi
 
