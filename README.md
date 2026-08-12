@@ -48,6 +48,8 @@ It allows administrators to manage parties, candidates and voters, while voters 
 
 ## 📁 Project Structure
 Sistem-i-Menaxhimit-te-Votave-Voto25-main/
+
+Sistem-i-Menaxhimit-te-Votave-Voto25-main/
 ├── index.html                  # Frontend (single page application)
 ├── README.md
 └── backend/
@@ -79,7 +81,6 @@ Sistem-i-Menaxhimit-te-Votave-Voto25-main/
 └── .env
 
 
----
 
 ## ⚙️ Prerequisites
 
