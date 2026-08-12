@@ -93,16 +93,15 @@ Sistem-i-Menaxhimit-te-Votave-Voto25-main/
 
 ### 1. Clone the repository
 
-```bash
 git clone <repository-url>
 cd Sistem-i-Menaxhimit-te-Votave-Voto25-main
 
-2. Install backend dependencies
+### 2. Install backend dependencies
 
 cd backend
 npm install
 
-3. Configure environment variables
+### 3. Configure environment variables
 The project already includes a .env file. You can edit it if needed:
 
 PORT=5000
@@ -110,7 +109,7 @@ MONGODB_URI=mongodb://localhost:27017/voto25
 
 For MongoDB Atlas, replace the URI with your connection string.
 
-4. Start the backend server
+### 4. Start the backend server
 
 # Production
 npm start
@@ -121,7 +120,7 @@ npm run dev
 Server will run at:
 http://localhost:5000
 
-📡 Main API Endpoints
+###  📡 Main API Endpoints
 
 Method,Endpoint,Description,Auth required
 POST,/api/admin/login,Admin login,No
@@ -140,7 +139,7 @@ GET,/api/health,Health check,No
 
 Vote endpoint validates the voter and prevents double voting.
 
-📊 Data Models
+###  📊 Data Models
 Party
 name, symbol, leader, foundingYear, ideology, voteCount
 Candidate
@@ -152,7 +151,7 @@ username, password (hashed), name, email, role
 Supported cities
 Tirana, Durrës, Vlorë, Shkodër, Elbasan, Korçë, Fier, Berat, Lushnjë, Kavajë
 
-👥 How to Use
+###  👥 How to Use
 Administrator
 
 Choose “Administrator”
@@ -160,7 +159,7 @@ Enter the admin code / login credentials
 Register parties → candidates → voters
 Monitor real-time results
 
-Voter
+###  Voter
 
 Choose “Votues”
 Enter your Voter ID
@@ -168,7 +167,7 @@ Select a candidate from your city
 Submit your vote (only once)
 
 
-🔒 Security Features
+### 🔒 Security Features
 
 Passwords hashed with bcrypt
 Protected routes with JWT
@@ -177,17 +176,17 @@ One vote per voter (hasVoted flag)
 CORS enabled
 
 
-📱 Compatibility
+### 📱 Compatibility
 
 Desktop
 Tablet
 Mobile (responsive design)
 
 
-📄 License
+### 📄 License
 This project is intended for educational and demonstration purposes.
 Feel free to use and modify it.
 
-👨‍💻 Developer
+### **👨‍💻 Developer
 Kristi Spahi
 
