@@ -1,134 +1,193 @@
-AL: Voto25 - Sistemi i Votingut Online
-📖 Përshkrim
-Voto25 është një aplikacion modern për voting online. Platforma ofron voting të sigurt dhe transparent për zgjedhje të ndryshme.
+# 🗳️ Voto25 – Sistemi i Menaxhimit të Votave
 
-✨ Karakteristikat
-✅ Voting i sigurt online
+**Sistem modern online për votim elektronik**
 
-✅ Menaxhim i plotë i votuesve dhe kandidatëve
+Voto25 is a full-stack web application for secure and transparent online voting.  
+It allows administrators to manage parties, candidates and voters, while voters can cast their vote in a simple and protected way. The system provides real-time results by city and overall.
 
-✅ Rezultate në kohë reale
+---
 
-✅ Design modern dhe responsive
+## ✨ Features
 
-✅ Admin panel për menaxhim
+### For Administrators
+- Secure admin login (JWT + password hashing)
+- Register political **parties**
+- Register **candidates** (linked to parties and cities)
+- Register **voters**
+- View all registered voters and candidates
+- View real-time **election results** (by candidate and by party)
+- Results filtered by city
 
-🚀 Si Ta Vë në Punë
+### For Voters
+- Login with Voter ID
+- View candidates available in their city
+- Cast a single vote (one vote per voter)
+- See voting status after submitting
 
-1. Nisja e Backend
+### General
+- Modern dark-themed and **responsive** UI (desktop, tablet, mobile)
+- Input validation on both frontend and backend
+- Protection against double voting
+- Real-time vote counting
+
+---
+
+## 🛠 Tech Stack
+
+| Layer          | Technology                              |
+|----------------|-----------------------------------------|
+| Frontend       | HTML5, CSS3, Vanilla JavaScript         |
+| Backend        | Node.js + Express.js                    |
+| Database       | MongoDB + Mongoose                      |
+| Authentication | JWT (JSON Web Tokens)                   |
+| Security       | bcryptjs (password hashing)             |
+| Validation     | express-validator                       |
+| Other          | cors, dotenv                            |
+
+---
+
+## 📁 Project Structure
+Sistem-i-Menaxhimit-te-Votave-Voto25-main/
+├── index.html                  # Frontend (single page application)
+├── README.md
+└── backend/
+├── config/
+│   └── database.js         # MongoDB connection
+├── controllers/
+│   ├── adminController.js
+│   ├── candidateController.js
+│   ├── electionController.js
+│   ├── partyController.js
+│   └── voterController.js
+├── middleware/
+│   ├── auth.js             # JWT protection
+│   └── validation.js       # Input validation rules
+├── models/
+│   ├── Admin.js
+│   ├── Candidate.js
+│   ├── ElectionResult.js
+│   ├── Party.js
+│   └── Voter.js
+├── routes/
+│   ├── admin.js
+│   ├── candidates.js
+│   ├── election.js
+│   ├── parties.js
+│   └── voters.js
+├── server.js               # Main Express server
+├── package.json
+└── .env
+
+
+---
+
+## ⚙️ Prerequisites
+
+- **Node.js** ≥ 16.x
+- **MongoDB** (local or MongoDB Atlas)
+- Modern web browser
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd Sistem-i-Menaxhimit-te-Votave-Voto25-main
+
+2. Install backend dependencies
 
 cd backend
 npm install
+
+3. Configure environment variables
+The project already includes a .env file. You can edit it if needed:
+
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/voto25
+
+For MongoDB Atlas, replace the URI with your connection string.
+
+4. Start the backend server
+
+# Production
 npm start
 
-2. Hapja e Frontend
-Hap skedarin index.html në shfletuesin tënd.
+# Development (with auto-reload)
+npm run dev
 
-👥 Përdorimi
-Si Administrator
-Shkruani kodin e administratorit
+Server will run at:
+http://localhost:5000
 
-Regjistroni partitë, kandidatët dhe votuesit
+📡 Main API Endpoints
 
-Shikoni rezultatet
+Method,Endpoint,Description,Auth required
+POST,/api/admin/login,Admin login,No
+POST,/api/parties/register,Register a new party,Yes
+GET,/api/parties / /api/parties/all,List all parties,No
+POST,/api/candidates/register,Register a candidate,Yes
+GET,/api/candidates,List all candidates,No
+GET,/api/candidates/city/:city,Candidates by city,No
+POST,/api/voters/register,Register a voter,Yes
+POST,/api/voters/login,Voter login (by Voter ID),No
+GET,/api/voters,List all voters,Yes
+POST,/api/voters/vote,Cast a vote,No*
+GET,/api/results,Election results,Yes
+GET,/api/results/parties,Results by party,Yes
+GET,/api/health,Health check,No
 
-Si Votues
-Shkruani ID-në tuaj të votuesit
+Vote endpoint validates the voter and prevents double voting.
 
-Zgjidhni kandidatin tuaj
+📊 Data Models
+Party
+name, symbol, leader, foundingYear, ideology, voteCount
+Candidate
+name, party, city, age (≥ 25), dateOfBirth, qualifications, manifesto, voteCount
+Voter
+firstName, lastName, age (≥ 18), dateOfBirth, email, voterId (unique), city, address, hasVoted, votedCandidateId, votedPartyId, voteDate
+Admin
+username, password (hashed), name, email, role
+Supported cities
+Tirana, Durrës, Vlorë, Shkodër, Elbasan, Korçë, Fier, Berat, Lushnjë, Kavajë
 
-Votoni dhe shikoni statusin
+👥 How to Use
+Administrator
 
-🛠️ Teknologjitë
-Frontend: HTML, CSS, JavaScript
+Choose “Administrator”
+Enter the admin code / login credentials
+Register parties → candidates → voters
+Monitor real-time results
 
-Backend: Node.js, Express, MongoDB
+Voter
 
-Siguria: JWT, bcrypt
-
-📱 Pajtueshmëria
-💻 Desktop
-
-📱 Mobile
-
-📟 Tablet
-
-⚠️ Kërkesat
-Node.js
-
-MongoDB
-
-Shfletues modern
-
-👨‍💻 Zhvilluesi
-Kristi Spahi
-
-Gati për voting! 🎉
+Choose “Votues”
+Enter your Voter ID
+Select a candidate from your city
+Submit your vote (only once)
 
 
-EN:🗳️ Voto25 - Online Voting System
-📖 Description
-Voto25 is a modern online voting application. The platform provides secure and transparent voting for various elections.
+🔒 Security Features
 
-✨ Features
-✅ Secure online voting
+Passwords hashed with bcrypt
+Protected routes with JWT
+Input validation with express-validator
+One vote per voter (hasVoted flag)
+CORS enabled
 
-✅ Complete management of voters and candidates
-
-✅ Real-time results
-
-✅ Modern and responsive design
-
-✅ Admin panel for management
-
-🚀 How to Set Up
-
-1. Starting the Backend
-
-cd backend
-npm install
-npm start
-
-2. Opening the Frontend
-Open the index.html file in your browser.
-
-👥 Usage
-As Administrator
-Enter the administrator code
-
-Register parties, candidates and voters
-
-View results
-
-As Voter
-Enter your voter ID
-
-Choose your candidate
-
-Vote and check your status
-
-🛠️ Technologies
-Frontend: HTML, CSS, JavaScript
-
-Backend: Node.js, Express, MongoDB
-
-Security: JWT, bcrypt
 
 📱 Compatibility
-💻 Desktop
 
-📱 Mobile
+Desktop
+Tablet
+Mobile (responsive design)
 
-📟 Tablet
 
-⚠️ Requirements
-Node.js
-
-MongoDB
-
-Modern browser
+📄 License
+This project is intended for educational and demonstration purposes.
+Feel free to use and modify it.
 
 👨‍💻 Developer
 Kristi Spahi
 
-Ready for voting! 🎉
