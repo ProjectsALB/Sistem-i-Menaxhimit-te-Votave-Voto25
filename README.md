@@ -79,7 +79,7 @@ Sistem-i-Menaxhimit-te-Votave-Voto25-main/
     ├── server.js
     ├── package.json
     └── .env
-
+```
 
 ## ⚙️ Prerequisites
 
