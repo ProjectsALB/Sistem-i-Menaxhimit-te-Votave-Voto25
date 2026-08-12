@@ -47,39 +47,37 @@ It allows administrators to manage parties, candidates and voters, while voters 
 ---
 
 ## 📁 Project Structure
-Sistem-i-Menaxhimit-te-Votave-Voto25-main/
 
 Sistem-i-Menaxhimit-te-Votave-Voto25-main/
-├── index.html                  # Frontend (single page application)
+├── index.html
 ├── README.md
 └── backend/
-├── config/
-│   └── database.js         # MongoDB connection
-├── controllers/
-│   ├── adminController.js
-│   ├── candidateController.js
-│   ├── electionController.js
-│   ├── partyController.js
-│   └── voterController.js
-├── middleware/
-│   ├── auth.js             # JWT protection
-│   └── validation.js       # Input validation rules
-├── models/
-│   ├── Admin.js
-│   ├── Candidate.js
-│   ├── ElectionResult.js
-│   ├── Party.js
-│   └── Voter.js
-├── routes/
-│   ├── admin.js
-│   ├── candidates.js
-│   ├── election.js
-│   ├── parties.js
-│   └── voters.js
-├── server.js               # Main Express server
-├── package.json
-└── .env
-
+    ├── config/
+    │   └── database.js
+    ├── controllers/
+    │   ├── adminController.js
+    │   ├── candidateController.js
+    │   ├── electionController.js
+    │   ├── partyController.js
+    │   └── voterController.js
+    ├── middleware/
+    │   ├── auth.js
+    │   └── validation.js
+    ├── models/
+    │   ├── Admin.js
+    │   ├── Candidate.js
+    │   ├── ElectionResult.js
+    │   ├── Party.js
+    │   └── Voter.js
+    ├── routes/
+    │   ├── admin.js
+    │   ├── candidates.js
+    │   ├── election.js
+    │   ├── parties.js
+    │   └── voters.js
+    ├── server.js
+    ├── package.json
+    └── .env
 
 
 ## ⚙️ Prerequisites
