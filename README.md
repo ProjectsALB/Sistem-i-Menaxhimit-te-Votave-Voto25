@@ -122,22 +122,25 @@ http://localhost:5000
 
 ###  📡 Main API Endpoints
 
-Method,Endpoint,Description,Auth required
-POST,/api/admin/login,Admin login,No
-POST,/api/parties/register,Register a new party,Yes
-GET,/api/parties / /api/parties/all,List all parties,No
-POST,/api/candidates/register,Register a candidate,Yes
-GET,/api/candidates,List all candidates,No
-GET,/api/candidates/city/:city,Candidates by city,No
-POST,/api/voters/register,Register a voter,Yes
-POST,/api/voters/login,Voter login (by Voter ID),No
-GET,/api/voters,List all voters,Yes
-POST,/api/voters/vote,Cast a vote,No*
-GET,/api/results,Election results,Yes
-GET,/api/results/parties,Results by party,Yes
-GET,/api/health,Health check,No
+## 📡 Main API Endpoints
 
-Vote endpoint validates the voter and prevents double voting.
+| Method | Endpoint                        | Description                     | Auth required |
+|--------|---------------------------------|---------------------------------|---------------|
+| POST   | `/api/admin/login`              | Admin login                     | No            |
+| POST   | `/api/parties/register`         | Register a new party            | Yes           |
+| GET    | `/api/parties` / `/api/parties/all` | List all parties             | No            |
+| POST   | `/api/candidates/register`      | Register a candidate            | Yes           |
+| GET    | `/api/candidates`               | List all candidates             | No            |
+| GET    | `/api/candidates/city/:city`    | Candidates by city              | No            |
+| POST   | `/api/voters/register`          | Register a voter                | Yes           |
+| POST   | `/api/voters/login`             | Voter login (by Voter ID)       | No            |
+| GET    | `/api/voters`                   | List all voters                 | Yes           |
+| POST   | `/api/voters/vote`              | Cast a vote                     | No*           |
+| GET    | `/api/results`                  | Election results                | Yes           |
+| GET    | `/api/results/parties`          | Results by party                | Yes           |
+| GET    | `/api/health`                   | Health check                    | No            |
+
+\* Vote endpoint validates the voter and prevents double voting.
 
 ###  📊 Data Models
 Party
