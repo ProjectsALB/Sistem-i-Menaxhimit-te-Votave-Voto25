@@ -48,6 +48,7 @@ It allows administrators to manage parties, candidates and voters, while voters 
 
 ## 📁 Project Structure
 
+```
 Sistem-i-Menaxhimit-te-Votave-Voto25-main/
 ├── index.html
 ├── README.md
@@ -186,6 +187,6 @@ Mobile (responsive design)
 This project is intended for educational and demonstration purposes.
 Feel free to use and modify it.
 
-###👨‍💻 Developer
+👨‍💻 Developer
 Kristi Spahi
 
